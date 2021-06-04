@@ -1,0 +1,45 @@
+.product__card {
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 1px 1px 15px #00000012;
+
+  img {
+    min-width: 120px;
+    max-width: 120px;
+    min-height: 120px;
+    max-height: 120px;
+  }
+
+  &__footer {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+
+    &__infos {
+      &__name {
+        p {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          margin-bottom: 0px;
+        }
+      }
+
+      &__price {
+        font-weight: bold;
+        color: #ff6d01;
+      }
+    }
+
+    &__plus {
+      img {
+        width: 21px;
+        height: 21px;
+      }
+    }
+  }
+}
