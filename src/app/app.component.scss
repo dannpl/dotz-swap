@@ -1,0 +1,28 @@
+.app {
+  display: flex;
+
+  &__router {
+    padding-top: 80px;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  &__chart {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    background-color: #ff6d01;
+    box-shadow: 1px 1px 15px #00000040;
+    bottom: 10px;
+    right: 10px;
+
+    &__icon {
+      width: 25px;
+    }
+  }
+}

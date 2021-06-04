@@ -1,22 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { HomeComponent } from './pages/home/home.component';
 
+import { AppRoutingModule } from '@web/app-routing.module';
+import { AppComponent } from '@web/app.component';
+import { ComponentsModule } from '@web/components/components.module';
+import { PagesModule } from '@web/pages/pages.module';
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    StoreModule.forRoot({}, {})
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, StoreModule.forRoot({}, {}), ComponentsModule, PagesModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
