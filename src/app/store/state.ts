@@ -1,6 +1,6 @@
 import { Action, ActionReducer } from '@ngrx/store';
 
-import { IApplicationState, initialValue } from '@web/store/application-state';
+import { IApplicationState, initialValue } from './../store/application-state';
 
 export function metaReducer(reducer: ActionReducer<IApplicationState>): any {
   return (state: IApplicationState, action: Action): any => {

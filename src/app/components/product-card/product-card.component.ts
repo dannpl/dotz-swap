@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { IProduct } from '@web/interfaces/product';
+import { IProduct } from './../../interfaces/product';
 
 @Component({
   selector: 'app-product-card',

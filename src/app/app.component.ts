@@ -2,9 +2,9 @@ import { Component, OnDestroy } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 
-import { IApplicationState } from '@web/store/application-state';
-import { UserActions, UserSelectors } from '@web/store/user';
-import { AppService } from '@web/app.service';
+import { IApplicationState } from './store/application-state';
+import { UserActions, UserSelectors } from './store/user';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',

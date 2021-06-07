@@ -8,11 +8,10 @@ import {
 import { select, Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 
-import { IApplicationState } from '@web/store/application-state';
-import { UserSelectors } from '@web/store/user';
-import { AppService } from '@web/app.service';
-import { IProduct } from '@web/interfaces/product';
-import { IProfile } from '@web/interfaces/profile';
+import { IApplicationState } from './../../store/application-state';
+import { UserSelectors } from './../../store/user';
+import { IProduct } from './../../interfaces/product';
+import { IProfile } from './../../interfaces/profile';
 
 @Component({
   selector: 'app-cart',
@@ -27,10 +26,7 @@ export class CartComponent implements OnDestroy {
 
   protected subscriptions: Subscription[] = [];
 
-  constructor(
-    protected store: Store<IApplicationState>,
-    protected appService: AppService,
-  ) {
+  constructor(protected store: Store<IApplicationState>) {
     this.subscriptions.push(
       this.store
         .pipe(select(UserSelectors.selectCartData))

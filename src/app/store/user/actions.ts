@@ -1,7 +1,7 @@
 import { createAction, props } from '@ngrx/store';
-import { IProduct } from '@web/interfaces/product';
+import { IProduct } from './../../interfaces/product';
 
-import { IProfile } from '@web/interfaces/profile';
+import { IProfile } from './../../interfaces/profile';
 
 export const upsertProfile = createAction(
   '[user] - Upsert Profile',

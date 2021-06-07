@@ -2,10 +2,9 @@ import { Component, OnDestroy } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 
-import { IApplicationState } from '@web/store/application-state';
-import { UserActions, UserSelectors } from '@web/store/user';
-import { AppService } from '@web/app.service';
-import { IProfile } from '@web/interfaces/profile';
+import { IApplicationState } from './../../store/application-state';
+import { UserSelectors } from './../../store/user';
+import { IProfile } from './../../interfaces/profile';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -16,10 +15,7 @@ export class HeaderComponent implements OnDestroy {
 
   protected subscriptions: Subscription[] = [];
 
-  constructor(
-    protected store: Store<IApplicationState>,
-    protected appService: AppService,
-  ) {
+  constructor(protected store: Store<IApplicationState>) {
     this.subscriptions.push(
       this.store
         .pipe(select(UserSelectors.selectUser))

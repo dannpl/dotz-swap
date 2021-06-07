@@ -1,8 +1,8 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { IProduct } from '@web/interfaces/product';
-import { IProfile } from '@web/interfaces/profile';
 
-import { IUserState } from '@web/store/user/state';
+import { IProduct } from './../../interfaces/product';
+import { IProfile } from './../../interfaces/profile';
+import { IUserState } from './../../store/user/state';
 
 const selectFeature = createFeatureSelector<IUserState>('user');
 

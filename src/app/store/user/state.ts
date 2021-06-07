@@ -1,5 +1,5 @@
-import { IProduct } from '@web/interfaces/product';
-import { IProfile } from '@web/interfaces/profile';
+import { IProduct } from './../../interfaces/product';
+import { IProfile } from './../../interfaces/profile';
 
 export interface IUserState {
   profile: IProfile;

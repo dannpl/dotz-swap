@@ -1,25 +1,19 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
 import { ProductCardComponent } from './product-card.component';
 
 describe('ProductCardComponent', () => {
-  let component: ProductCardComponent;
-  let fixture: ComponentFixture<ProductCardComponent>;
+  let productCardComponent: ProductCardComponent;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ProductCardComponent ]
-    })
-    .compileComponents();
+  beforeEach((): void => {
+    TestBed.configureTestingModule({
+      providers: [ProductCardComponent],
+    });
+
+    productCardComponent = TestBed.inject(ProductCardComponent);
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ProductCardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should initialize ProductCardComponent', (): void => {
+    expect(productCardComponent).toBeDefined();
   });
 });
