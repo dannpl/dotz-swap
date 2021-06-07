@@ -1,9 +1,10 @@
+import { IProduct } from '@web/interfaces/product';
 import { IProfile } from '@web/interfaces/profile';
 
 export interface IUserState {
   profile: IProfile;
   showCart: boolean;
-  cartData: any;
+  cartData: IProduct[];
 }
 
 export const userInitialState: IUserState = {
@@ -17,5 +18,5 @@ export const userInitialState: IUserState = {
     orders: [],
   },
   showCart: false,
-  cartData: {},
+  cartData: [],
 };

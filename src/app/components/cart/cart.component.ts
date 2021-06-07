@@ -11,6 +11,8 @@ import { Subscription } from 'rxjs';
 import { IApplicationState } from '@web/store/application-state';
 import { UserSelectors } from '@web/store/user';
 import { AppService } from '@web/app.service';
+import { IProduct } from '@web/interfaces/product';
+import { IProfile } from '@web/interfaces/profile';
 
 @Component({
   selector: 'app-cart',
@@ -20,7 +22,8 @@ import { AppService } from '@web/app.service';
 export class CartComponent implements OnDestroy {
   @Input() show: boolean = false;
   @Output() readonly onClose: EventEmitter<void> = new EventEmitter<void>();
-  public cartData = {};
+  public cartData: IProduct[] = [];
+  public user: IProfile | undefined;
 
   protected subscriptions: Subscription[] = [];
 
@@ -31,8 +34,16 @@ export class CartComponent implements OnDestroy {
     this.subscriptions.push(
       this.store
         .pipe(select(UserSelectors.selectCartData))
-        .subscribe((cartData: any): void => {
+        .subscribe((cartData: IProduct[]): void => {
           this.cartData = cartData;
+        }),
+    );
+
+    this.subscriptions.push(
+      this.store
+        .pipe(select(UserSelectors.selectUser))
+        .subscribe((user: IProfile): void => {
+          this.user = user;
         }),
     );
   }
@@ -41,6 +52,28 @@ export class CartComponent implements OnDestroy {
     this.subscriptions.forEach((subscription: Subscription): void => {
       subscription.unsubscribe();
     });
+  }
+
+  emptyList(): boolean {
+    return this.cartData.length === 0;
+  }
+
+  getTotal(): number {
+    let total = 0;
+
+    this.cartData.map((product: IProduct): void => {
+      total += product.price;
+    });
+
+    return total;
+  }
+
+  getBalance(): number {
+    if (this.user === undefined) {
+      return this.getTotal();
+    }
+
+    return this.user.points - this.getTotal();
   }
 
   close(): void {

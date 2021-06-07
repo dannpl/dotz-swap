@@ -1,4 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { IProduct } from '@web/interfaces/product';
 import { IProfile } from '@web/interfaces/profile';
 
 import { IUserState } from '@web/store/user/state';
@@ -21,7 +22,7 @@ export const selectCart = createSelector(
 
 export const selectCartData = createSelector(
   selectFeature,
-  (state: IUserState): any => {
-    return state.cartData;
+  (state: IUserState): IProduct[] => {
+    return state.cartData ?? [];
   },
 );

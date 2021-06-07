@@ -3,6 +3,7 @@ import { Action, createReducer, on } from '@ngrx/store';
 import * as UserActions from '@web/store/user/actions';
 import { IUserState, userInitialState } from '@web/store/user/state';
 import { IProfile } from '@web/interfaces/profile';
+import { IProduct } from '@web/interfaces/product';
 
 const userReducer = createReducer(
   userInitialState,
@@ -14,8 +15,14 @@ const userReducer = createReducer(
   ),
   on(
     UserActions.setCartData,
-    (state: IUserState, { cartData }: { cartData: any }): IUserState => {
-      return { ...state, cartData };
+    (state: IUserState, { cartData }: { cartData: IProduct }): IUserState => {
+      if (!state.cartData) {
+        state.cartData = [];
+      }
+
+      state.cartData.push(cartData);
+
+      return { ...state };
     },
   ),
   on(
