@@ -1,15 +1,15 @@
-<div [routerLink]="['/product', product.id]" class="product__card">
+<div [routerLink]="['/produto', product?.id]" class="product__card">
   <div class="product__card__image">
-    <img src="./../../../assets/img/fone.png" />
+    <img [src]="product?.image" />
   </div>
 
   <div class="product__card__footer">
     <div class="product__card__footer__infos">
       <div class="product__card__footer__infos__name">
-        <p>zouri adsdsadsdsadsdsadsds</p>
+        <p>{{ product?.name }}</p>
       </div>
       <div class="product__card__footer__infos__price">
-        <span>75<small> DZ</small></span>
+        <span>{{ product?.price }}<small> DZ</small></span>
       </div>
     </div>
   </div>

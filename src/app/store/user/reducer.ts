@@ -12,6 +12,18 @@ const userReducer = createReducer(
       return { ...state, profile };
     },
   ),
+  on(
+    UserActions.setCartData,
+    (state: IUserState, { cartData }: { cartData: any }): IUserState => {
+      return { ...state, cartData };
+    },
+  ),
+  on(
+    UserActions.setShowCart,
+    (state: IUserState, { showCart }: { showCart: boolean }): IUserState => {
+      return { ...state, showCart };
+    },
+  ),
 );
 
 export function reducer(

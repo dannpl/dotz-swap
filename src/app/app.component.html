@@ -3,7 +3,9 @@
     <app-header></app-header>
     <router-outlet></router-outlet>
   </div>
-  <div class="app__chart">
-    <img class="app__chart__icon" src="./../assets/img/shopping-cart.png" />
+  <div class="app__cart" (click)="setShowCart()">
+    <img class="app__cart__icon" src="./../assets/img/shopping-cart.png" />
   </div>
 </div>
+
+<app-cart (onClose)="setShowCart()" [show]="showCart"></app-cart>

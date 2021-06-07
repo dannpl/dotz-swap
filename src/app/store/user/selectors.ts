@@ -11,3 +11,17 @@ export const selectUser = createSelector(
     return state.profile;
   },
 );
+
+export const selectCart = createSelector(
+  selectFeature,
+  (state: IUserState): boolean => {
+    return state.showCart;
+  },
+);
+
+export const selectCartData = createSelector(
+  selectFeature,
+  (state: IUserState): any => {
+    return state.cartData;
+  },
+);
