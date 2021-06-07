@@ -1,9 +1,9 @@
 import { Action, createReducer, on } from '@ngrx/store';
 
-import * as UserActions from '@web/store/user/actions';
-import { IUserState, userInitialState } from '@web/store/user/state';
-import { IProfile } from '@web/interfaces/profile';
-import { IProduct } from '@web/interfaces/product';
+import * as UserActions from './../../store/user/actions';
+import { IUserState, userInitialState } from './../../store/user/state';
+import { IProfile } from './../../interfaces/profile';
+import { IProduct } from './../../interfaces/product';
 
 const userReducer = createReducer(
   userInitialState,

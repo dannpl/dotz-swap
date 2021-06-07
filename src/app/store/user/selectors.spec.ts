@@ -1,7 +1,6 @@
-import { waitForAsync } from '@angular/core/testing';
-import { IProduct } from '@web/interfaces/product';
-import { IProfile } from '@web/interfaces/profile';
-import { UserSelectors } from '.';
+import { IProduct } from './../../interfaces/product';
+import { IProfile } from './../../interfaces/profile';
+import { UserSelectors } from './index';
 
 import { IApplicationState } from '../application-state';
 
