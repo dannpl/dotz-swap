@@ -3,10 +3,10 @@ const express = require('express');
 
 const app = express();
 
-app.use(express.static('./dist/dotz-swap'));
+app.use(express.static('./dist/dotzSwap'));
 
 app.get('/*', function (req, res) {
-  res.sendFile('index.html', { root: 'dist/dotz-swap' });
+  res.sendFile('index.html', { root: 'dist/dotzSwap' });
 });
 
 app.listen(process.env.PORT || 8080);
