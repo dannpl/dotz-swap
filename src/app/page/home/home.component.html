@@ -1,0 +1,39 @@
+<div class="home">
+  <div class="container">
+    <div class="home__infos">
+      <div class="home__infos__points">
+        <span class="home__infos__points__label">Seus Pontos </span>
+        <span class="home__infos__points__total">99 <small>Dz</small></span>
+      </div>
+      <span class="home__infos__products" [routerLink]="['/produtos']"
+        >Ver Lista de Produtos</span
+      >
+    </div>
+  </div>
+  <div class="home__product">
+    <div class="container">
+      <div class="home__product__banner">
+        <img *ngFor="let banner of banners" [src]="banner.image" />
+      </div>
+      <div *ngFor="let section of sections" class="home__product__list">
+        <div class="home__product__list__infos">
+          <span class="home__product__list__infos__title">{{
+            section.title
+          }}</span>
+          <span
+            [routerLink]="['/produtos']"
+            class="home__product__list__infos__seeall"
+            >Ver todos</span
+          >
+        </div>
+        <div class="home__product__list__products">
+          <app-product-card
+            [product]="product"
+            class="home__product__card"
+            *ngFor="let product of section.items"
+          ></app-product-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
