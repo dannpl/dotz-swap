@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './pages/home/home.component';
-import { ProductComponent } from './pages/product/product.component';
-import { ProductsComponent } from './pages/products/products.component';
-import { ProfileComponent } from './pages/profile/profile.component';
+import { HomeComponent } from './page/home/home.component';
+import { ProductComponent } from './page/product/product.component';
+import { ProductsComponent } from './page/products/products.component';
+import { ProfileComponent } from './page/profile/profile.component';
 
 const routes: Routes = [
   {
